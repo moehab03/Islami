@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Islami</string>
+    <string name="supervised_">Supervised by Mohamed Ehab</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Islami">إسلامي</string>
+    <string name="tasbeh_counter">عدد التسبيحات</string>
+    <string name="quran">القران</string>
+    <string name="ahadeth">الاحاديث</string>
+    <string name="tasbeh">تسبيح</string>
+    <string name="radio">راديو</string>
+    <string name="_0">0</string>
+</resources>
