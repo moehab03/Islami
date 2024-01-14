@@ -15,8 +15,9 @@ import com.example.islami.databinding.FragmentSebhaBinding
 class SebhaFragment : Fragment() {
     lateinit var binding: FragmentSebhaBinding
     private var azkarList = ArrayList<String>()
-    var counter = 1
-    var azkarCounter = 1
+    private var counter = 1
+    private var azkarCounter = 1
+    private var currentRotation = 0f
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,7 +34,17 @@ class SebhaFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.counterBtn.setOnClickListener {
             increaseCounter()
+
+            rotateImage()
         }
+    }
+
+    private fun rotateImage() {
+        currentRotation += 90f
+        val matrix = android.graphics.Matrix()
+        binding.sebhaBodyIv.scaleType = ImageView.ScaleType.MATRIX
+        matrix.postRotate(currentRotation, binding.sebhaBodyIv.width.toFloat() / 2, binding.sebhaBodyIv.height.toFloat() / 2)
+        binding.sebhaBodyIv.imageMatrix = matrix
     }
 
     private fun fillArray() {
