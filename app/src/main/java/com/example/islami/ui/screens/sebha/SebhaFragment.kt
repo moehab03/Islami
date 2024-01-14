@@ -40,7 +40,7 @@ class SebhaFragment : Fragment() {
     }
 
     private fun rotateImage() {
-        currentRotation += 90f
+        currentRotation += 45f
         val matrix = android.graphics.Matrix()
         binding.sebhaBodyIv.scaleType = ImageView.ScaleType.MATRIX
         matrix.postRotate(currentRotation, binding.sebhaBodyIv.width.toFloat() / 2, binding.sebhaBodyIv.height.toFloat() / 2)
@@ -51,7 +51,6 @@ class SebhaFragment : Fragment() {
         azkarList.add("سبحان الله")
         azkarList.add("الحمدلله")
         azkarList.add("الله اكبر")
-        azkarList.add("لا اله الا الله وحده لا شريك له له الملك وله الحمد وهو علي كل شيء قدير")
         azkarList.add("اللهم اعني علي ذكرك و شكرك و حسن عبادتك")
         azkarList.add("اللهم صلي وسلم وبارك علي سيدنا محمد")
         azkarList.add("استغفرك ربي و اتوب إليك")
