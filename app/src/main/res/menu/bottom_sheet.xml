@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/ic_radio"
+        android:title="@string/radio"
+        app:showAsAction="ifRoom" />
     <item
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/ic_sebha"
-        android:title="@string/quran" />
-    <item
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:title="@string/ahadeth"
-        android:icon="@drawable/ic_ahadeth"/>
-    <item
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:title="@string/tasbeh"
-        android:icon="@drawable/ic_sebha"/>
+        app:showAsAction="ifRoom" />
     <item
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="@string/radio"
-        android:icon="@drawable/ic_radio"/>
-
+        android:icon="@drawable/ic_ahadeth"
+        android:title="@string/ahadeth"
+        app:showAsAction="always" />
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/ic_quran"
+        android:title="@string/quran"
+        app:showAsAction="always" />
 </menu>
