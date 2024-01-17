@@ -34,7 +34,6 @@ class SebhaFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.counterBtn.setOnClickListener {
             increaseCounter()
-
             rotateImage()
         }
     }
