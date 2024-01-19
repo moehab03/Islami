@@ -39,11 +39,15 @@ class SebhaFragment : Fragment() {
     }
 
     private fun rotateImage() {
-        currentRotation += 45f
+        currentRotation += 90f
+        binding.sebhaBodyIv.rotation = currentRotation
+
+        // Another solution
+        /*currentRotation += 45f
         val matrix = android.graphics.Matrix()
         binding.sebhaBodyIv.scaleType = ImageView.ScaleType.MATRIX
         matrix.postRotate(currentRotation, binding.sebhaBodyIv.width.toFloat() / 2, binding.sebhaBodyIv.height.toFloat() / 2)
-        binding.sebhaBodyIv.imageMatrix = matrix
+        binding.sebhaBodyIv.imageMatrix = matrix*/
     }
 
     private fun fillArray() {
