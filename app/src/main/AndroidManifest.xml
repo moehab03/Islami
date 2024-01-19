@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.screens.Home.HomeActivity"
+            android:name=".ui.screens.home.HomeActivity"
             android:exported="false">
 
         </activity>

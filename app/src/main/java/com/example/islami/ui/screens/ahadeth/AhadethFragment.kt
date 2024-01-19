@@ -32,7 +32,7 @@ class AhadethFragment : Fragment() {
     }
 
     private fun fillAhadethArray() {
-        for (x in 1..55) {
+        for (x in 1..50) {
             ahadethList.add("الحديث رقم $x")
         }
     }

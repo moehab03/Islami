@@ -13,7 +13,7 @@ import com.example.islami.databinding.ActivityHomeBinding
 import com.example.islami.databinding.FragmentSebhaBinding
 
 class SebhaFragment : Fragment() {
-    lateinit var binding: FragmentSebhaBinding
+    private lateinit var binding: FragmentSebhaBinding
     private var azkarList = ArrayList<String>()
     private var counter = 1
     private var azkarCounter = 1
@@ -26,7 +26,7 @@ class SebhaFragment : Fragment() {
         fillArray()
         binding = FragmentSebhaBinding.inflate(inflater, container, false)
         binding.counterBtn.text = counter.toString()
-        binding.zekrTv.text = azkarList[0]
+        binding.zekrBtn.text = azkarList[0]
         return binding.root
     }
 
@@ -71,7 +71,7 @@ class SebhaFragment : Fragment() {
         if (azkarCounter == azkarList.size)
             azkarCounter = 0
 
-        binding.zekrTv.text = azkarList[azkarCounter]
+        binding.zekrBtn.text = azkarList[azkarCounter]
         azkarCounter++
     }
 }

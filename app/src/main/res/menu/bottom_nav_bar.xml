@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/quranMenuItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/ic_quran"
+        android:title="@string/quran" />
+
+    <item
+        android:id="@+id/ahadethMenuItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/ic_ahadeth"
+        android:title="@string/ahadeth" />
+
+    <item
+        android:id="@+id/tasbehMenuItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/ic_sebha"
+        android:title="@string/tasbeh" />
+
+    <item
+        android:id="@+id/radioMenuItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/ic_radio"
+        android:title="@string/radio" />
+
+</menu>

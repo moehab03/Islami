@@ -7,9 +7,10 @@
     tools:context=".ui.screens.ahadeth.AhadethFragment">
 
     <ImageView
-        android:id="@+id/ahadeth_main_iv"
-        android:layout_width="312dp"
-        android:layout_height="219dp"
+        android:id="@+id/quranMainIV"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.25"
         android:layout_marginTop="25dp"
         android:src="@drawable/ahadeth_main_picture"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,43 +18,46 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/line_1"
+        android:id="@+id/line1"
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:background="@drawable/line"
-        app:layout_constraintBottom_toTopOf="@+id/ahadeth_tv"
+        app:layout_constraintBottom_toTopOf="@+id/suraTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ahadeth_main_iv" />
+        app:layout_constraintTop_toBottomOf="@id/quranMainIV" />
 
     <TextView
-        android:id="@+id/ahadeth_tv"
+        android:id="@+id/suraTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="16dp"
         android:layout_marginTop="16dp"
         android:gravity="top"
-        android:text="@string/ahazeth"
+        android:text="@string/ahadeth"
         android:textAppearance="@style/some_id"
-        app:layout_constraintEnd_toEndOf="@id/ahadeth_main_iv"
-        app:layout_constraintStart_toStartOf="@id/ahadeth_main_iv"
-        app:layout_constraintTop_toBottomOf="@id/ahadeth_main_iv" />
+        app:layout_constraintEnd_toEndOf="@id/quranMainIV"
+        app:layout_constraintStart_toStartOf="@id/quranMainIV"
+        app:layout_constraintTop_toBottomOf="@id/quranMainIV"
+        />
 
     <View
-        android:id="@+id/line_2"
+        android:id="@+id/line2"
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:background="@drawable/line"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ahadeth_tv" />
+        app:layout_constraintTop_toBottomOf="@id/suraTV"
+        android:layout_marginTop="8dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/ahadeth_recycler_view"
+        android:id="@+id/ahadethRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/line_2"
+        app:layout_constraintTop_toBottomOf="@id/line2"
         tools:listitem="@layout/ahadeth_view"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 

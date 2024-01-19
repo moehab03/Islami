@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import com.example.islami.databinding.ActivitySplashScreenBinding
-import com.example.islami.ui.screens.Home.HomeActivity
+import com.example.islami.ui.screens.home.HomeActivity
 
 class SplashScreenActivity : AppCompatActivity() {
     lateinit var binding: ActivitySplashScreenBinding

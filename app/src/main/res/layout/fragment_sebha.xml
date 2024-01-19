@@ -7,18 +7,18 @@
     tools:context=".ui.screens.sebha.SebhaFragment">
 
     <ImageView
-        android:id="@+id/sebha_head_iv"
+        android:id="@+id/sebhaHeadIv"
         android:layout_width="73dp"
         android:layout_height="105dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="40dp"
         android:src="@drawable/head_sebha_logo"
-        app:layout_constraintEnd_toEndOf="@+id/sebha_body_iv"
-        app:layout_constraintStart_toStartOf="@+id/sebha_body_iv"
+        app:layout_constraintEnd_toEndOf="@+id/sebhaBodyIv"
+        app:layout_constraintStart_toStartOf="@+id/sebhaBodyIv"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/sebha_body_iv"
+        android:id="@+id/sebhaBodyIv"
         android:layout_width="232dp"
         android:layout_height="234dp"
         android:layout_marginTop="118dp"
@@ -29,19 +29,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tasbih_counter_tv"
+        android:id="@+id/tasbehCounterTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="42dp"
         android:text="@string/tasbeh_counter"
         android:textColor="@color/light_black"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/sebha_body_iv"
-        app:layout_constraintStart_toStartOf="@+id/sebha_body_iv"
-        app:layout_constraintTop_toBottomOf="@+id/sebha_body_iv" />
+        app:layout_constraintEnd_toEndOf="@+id/sebhaBodyIv"
+        app:layout_constraintStart_toStartOf="@+id/sebhaBodyIv"
+        app:layout_constraintTop_toBottomOf="@+id/sebhaBodyIv" />
 
     <Button
-        android:id="@+id/counter_btn"
+        android:id="@+id/counterBtn"
         android:layout_width="wrap_content"
         android:layout_height="81dp"
         android:layout_marginTop="26dp"
@@ -51,13 +51,13 @@
         android:textSize="25sp"
         tools:text="0"
         app:cornerRadius="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/tasbih_counter_tv"
-        app:layout_constraintStart_toStartOf="@+id/tasbih_counter_tv"
-        app:layout_constraintTop_toBottomOf="@+id/tasbih_counter_tv"
+        app:layout_constraintEnd_toEndOf="@+id/tasbehCounterTv"
+        app:layout_constraintStart_toStartOf="@+id/tasbehCounterTv"
+        app:layout_constraintTop_toBottomOf="@+id/tasbehCounterTv"
         />
 
     <Button
-        android:id="@+id/zekr_tv"
+        android:id="@+id/zekrBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
@@ -67,8 +67,8 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         app:cornerRadius="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/counter_btn"
-        app:layout_constraintStart_toStartOf="@+id/counter_btn"
-        app:layout_constraintTop_toBottomOf="@+id/counter_btn"
+        app:layout_constraintEnd_toEndOf="@+id/counterBtn"
+        app:layout_constraintStart_toStartOf="@+id/counterBtn"
+        app:layout_constraintTop_toBottomOf="@+id/counterBtn"
         tools:text="سبحان الله" />
 </androidx.constraintlayout.widget.ConstraintLayout>
