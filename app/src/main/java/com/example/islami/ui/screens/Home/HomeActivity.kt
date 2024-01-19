@@ -12,7 +12,7 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         supportFragmentManager.beginTransaction()
-            .add(R.id.frame_layout, AhadethFragment())
+            .add(R.id.frame_layout, SebhaFragment())
             .commit()
     }
 }

@@ -23,6 +23,7 @@ class AhadethFragment : Fragment() {
         adapter = AhadethAdapter(ahadethList)
         binding.ahadethRecyclerView.adapter = adapter
         return binding.root
+        
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
