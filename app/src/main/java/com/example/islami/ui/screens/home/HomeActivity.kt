@@ -32,7 +32,6 @@ class HomeActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.quranMenuItem -> {
                     startFragment(QuranFragment())
-
                 }
                 R.id.radioMenuItem -> {
                     startFragment(RadioFragment())
