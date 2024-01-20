@@ -30,19 +30,7 @@ class SebhaFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initSebha()
-        tasbeh()
-    }
-
-    private fun tasbeh() {
-        binding.sebhaBodyIv.setOnClickListener {
-            increaseCounter()
-        }
-        binding.counterBtn.setOnClickListener {
-            increaseCounter()
-        }
-        binding.zekrBtn.setOnClickListener {
-            increaseCounter()
-        }
+        tasbih()
     }
 
     private fun initSebha() {
@@ -65,6 +53,25 @@ class SebhaFragment : Fragment() {
         azkarList.add("استغفرك ربي و اتوب إليك")
     }
 
+    private fun changeZekr() {
+        if (azkarCounter == azkarList.size)
+            azkarCounter = 0
+
+        binding.zekrBtn.text = azkarList[azkarCounter]
+        azkarCounter++
+    }
+
+    private fun tasbih(){
+        binding.sebhaBodyIv.setOnClickListener {
+            increaseCounter()
+        }
+        binding.zekrBtn.setOnClickListener {
+            increaseCounter()
+        }
+        binding.counterBtn.setOnClickListener {
+            increaseCounter()
+        }
+    }
     private fun increaseCounter() {
         if (counter % 33 == 0)
             changeZekr()
@@ -74,11 +81,4 @@ class SebhaFragment : Fragment() {
         binding.counterBtn.text = counter.toString()
     }
 
-    private fun changeZekr() {
-        if (azkarCounter == azkarList.size)
-            azkarCounter = 0
-
-        binding.zekrBtn.text = azkarList[azkarCounter]
-        azkarCounter++
-    }
 }
