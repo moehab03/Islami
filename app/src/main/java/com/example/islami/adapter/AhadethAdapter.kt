@@ -8,10 +8,17 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.example.islami.R
 
-class AhadethAdapter(private var ahadethList: ArrayList<String>) : Adapter<AhadethAdapter.ViewHolder>() {
+class AhadethAdapter(private var ahadethList: ArrayList<String>) :
+    Adapter<AhadethAdapter.ViewHolder>() {
+
+        private lateinit var onHadethClick: OnItemCLickListner
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var hadeth: TextView = itemView.findViewById(R.id.hadethTv)
+    }
+
+    interface OnItemCLickListner {
+        fun onItemClick(suraName: String, index: Int)
     }
 
     override fun getItemCount(): Int = ahadethList.size
@@ -22,5 +29,8 @@ class AhadethAdapter(private var ahadethList: ArrayList<String>) : Adapter<Ahade
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.hadeth.text = ahadethList[position]
+        holder.hadeth.setOnClickListener {
+            onHadethClick.onItemClick(ahadethList[position], position)
+        }
     }
 }

@@ -2,7 +2,9 @@ package com.example.islami
 
 abstract class Constant {
     companion object {
-        val SURAS_NAMES = arrayListOf(
+        const val DETAILS = "details"
+        const val FILE_NAME = "fileName"
+        val SURAS_NAMES_LIST = arrayListOf(
             "الفاتحه",
             "البقرة",
             "آل عمران",
@@ -118,5 +120,6 @@ abstract class Constant {
             "الفلق",
             "الناس"
         )
+        const val SURA_NAME = "suraName"
     }
 }
