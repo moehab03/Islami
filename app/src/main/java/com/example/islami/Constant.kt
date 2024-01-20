@@ -3,6 +3,7 @@ package com.example.islami
 abstract class Constant {
     companion object {
         const val DETAILS = "details"
+        const val HADETH = "hadeth"
         const val FILE_NAME = "fileName"
         val SURAS_NAMES_LIST = arrayListOf(
             "الفاتحه",

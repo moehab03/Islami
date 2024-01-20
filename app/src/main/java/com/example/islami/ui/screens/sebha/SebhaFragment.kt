@@ -23,31 +23,37 @@ class SebhaFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        fillArray()
         binding = FragmentSebhaBinding.inflate(inflater, container, false)
-        binding.counterBtn.text = counter.toString()
-        binding.zekrBtn.text = azkarList[0]
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initSebha()
+        tasbeh()
+    }
+
+    private fun tasbeh() {
+        binding.sebhaBodyIv.setOnClickListener {
+            increaseCounter()
+        }
         binding.counterBtn.setOnClickListener {
             increaseCounter()
-            rotateImage()
+        }
+        binding.zekrBtn.setOnClickListener {
+            increaseCounter()
         }
     }
 
-    private fun rotateImage() {
-        currentRotation += 90f
-        binding.sebhaBodyIv.rotation = currentRotation
+    private fun initSebha() {
+        fillArray()
+        binding.counterBtn.text = counter.toString()
+        binding.zekrBtn.text = azkarList[0]
+    }
 
-        // Another solution
-        /*currentRotation += 45f
-        val matrix = android.graphics.Matrix()
-        binding.sebhaBodyIv.scaleType = ImageView.ScaleType.MATRIX
-        matrix.postRotate(currentRotation, binding.sebhaBodyIv.width.toFloat() / 2, binding.sebhaBodyIv.height.toFloat() / 2)
-        binding.sebhaBodyIv.imageMatrix = matrix*/
+    private fun rotateImage() {
+        currentRotation += 180f
+        binding.sebhaBodyIv.rotation = currentRotation
     }
 
     private fun fillArray() {
@@ -64,6 +70,7 @@ class SebhaFragment : Fragment() {
             changeZekr()
 
         counter++
+        rotateImage()
         binding.counterBtn.text = counter.toString()
     }
 

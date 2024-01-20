@@ -1,9 +1,11 @@
 package com.example.islami.ui.screens.details
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.view.isVisible
 import com.example.islami.Constant
+import com.example.islami.data_model.AhadethModel
 import com.example.islami.databinding.ActivityDetailsBinding
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -25,6 +27,7 @@ class DetailsActivity : AppCompatActivity() {
             hadethDetails()
         }
     }
+
     private fun quranDetails() {
         val suraName = intent.getStringExtra(Constant.SURA_NAME)!!
         binding.detailsLabelTV.text = "سورة $suraName"
@@ -51,6 +54,14 @@ class DetailsActivity : AppCompatActivity() {
     }
 
     private fun hadethDetails() {
+        val hadeth = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            intent.getSerializableExtra(Constant.HADETH, AhadethModel::class.java)
+        } else {
+            intent.getSerializableExtra(Constant.HADETH) as AhadethModel
+        }!!
+
+        binding.detailsLabelTV.text = hadeth.title
+        binding.detailsTV.text = hadeth.body
         binding.quranPlayBtn.isVisible = false
     }
 }
