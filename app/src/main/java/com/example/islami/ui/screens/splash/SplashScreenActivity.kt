@@ -13,15 +13,15 @@ class SplashScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        Handler().postDelayed({
-            startHomeScreen()
-            finish()
-        }, 2000)
+        startHomeScreen()
     }
 
     private fun startHomeScreen() {
-        val intent = Intent(this,HomeActivity::class.java)
-        startActivity(intent)
+        Handler().postDelayed({
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
+        }, 2000)
     }
 
 }
