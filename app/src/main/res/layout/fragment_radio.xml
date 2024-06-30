@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activities.home.fragments.radio.RadioFragment">
+
+        <ImageView
+            android:id="@+id/radioIV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="160dp"
+            android:src="@drawable/radio_main"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/radioTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="@string/quran_kareem_radio"
+            android:textColor="@color/light_black"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/radioIV"
+            app:layout_constraintStart_toStartOf="@+id/radioIV"
+            app:layout_constraintTop_toBottomOf="@+id/radioIV" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/orange"
+            app:layout_constraintBottom_toBottomOf="@+id/radioPlayBtn"
+            app:layout_constraintEnd_toEndOf="@+id/radioPlayBtn"
+            app:layout_constraintStart_toStartOf="@+id/radioPlayBtn"
+            app:layout_constraintTop_toTopOf="@+id/radioPlayBtn" />
+
+        <View
+            android:id="@+id/radioPlayBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/ic_play"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@+id/radioNextBtn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/radio_preveous_btn"
+            app:layout_constraintTop_toBottomOf="@id/radioTV" />
+
+        <View
+            android:id="@+id/radioNextBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_next"
+            app:layout_constraintBottom_toBottomOf="@+id/radioPlayBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/radioPlayBtn"
+            app:layout_constraintTop_toTopOf="@+id/radioPlayBtn" />
+
+        <View
+            android:id="@+id/radio_preveous_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_previous"
+            app:layout_constraintBottom_toBottomOf="@+id/radioPlayBtn"
+            app:layout_constraintEnd_toStartOf="@+id/radioPlayBtn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/radioPlayBtn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

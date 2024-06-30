@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">إسلامي</string>
+    <string name="supervised_">تنفيذ محمد إيهاب</string>
+    <string name="Islami">إسلامي</string>
+    <string name="tasbeh_counter">عدد التسبيحات</string>
+    <string name="quran">قران كريم</string>
+    <string name="ahadeth">احاديث</string>
+    <string name="tasbeh">تسبيح</string>
+    <string name="radio">راديو</string>
+    <string name="sura">اسم الصورة</string>
+    <string name="quran_kareem_radio">راديو القران الكريم</string>
+</resources>
