@@ -10,5 +10,7 @@
     <string name="radio">Radio</string>
     <string name="sura">Sura Name</string>
     <string name="quran_kareem_radio">Quran kareem Radio</string>
+    <string name="islami_radio">Islami Radio</string>
+    <string name="islami_radio_">Islami Radio</string>
 
 </resources>
