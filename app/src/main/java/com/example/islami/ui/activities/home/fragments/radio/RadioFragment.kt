@@ -41,7 +41,7 @@ class RadioFragment : BaseFragment<FragmentRadioBinding>() {
             if (!it.isNullOrEmpty()) {
                 radioStations = it
                 updateUI()
-                createForegroundService()
+                createService()
             }
         }
     }
@@ -55,13 +55,13 @@ class RadioFragment : BaseFragment<FragmentRadioBinding>() {
         binding.radioPlayBtn.visibility = View.VISIBLE
     }
 
-    private fun createForegroundService() {
+    private fun createService() {
         val intent = Intent(requireContext(), RadioService::class.java)
         intent.putParcelableArrayListExtra(Constant.RADIOS_STATION, ArrayList(radioStations))
         requireActivity().startService(intent)
     }
 
-    private fun startForegroundService(index: Int) {
+    private fun updateService(index: Int) {
         val intent = Intent(requireContext(), RadioService::class.java)
         intent.putExtra(Constant.CURRENT_INDEX, index)
         requireActivity().startService(intent)
@@ -78,7 +78,7 @@ class RadioFragment : BaseFragment<FragmentRadioBinding>() {
             0
 
         updateRadioName()
-        startForegroundService(currentChannel!!)
+        updateService(currentChannel!!)
     }
 
     private fun preveousChannel() {
@@ -88,18 +88,18 @@ class RadioFragment : BaseFragment<FragmentRadioBinding>() {
             radioStations.size - 1
 
         updateRadioName()
-        startForegroundService(currentChannel!!)
+        updateService(currentChannel!!)
 
     }
 
     private fun playAndPauseRadio() {
         if (mediaPlayerState) {
             mediaPlayerState = false
-            startForegroundService(-1)
+            updateService(-1)
             binding.radioPlayBtn.setBackgroundResource(ic_play)
         } else {
             mediaPlayerState = true
-            startForegroundService(currentChannel!!)
+            updateService(currentChannel!!)
             binding.radioPlayBtn.setBackgroundResource(ic_pause)
         }
     }

@@ -25,9 +25,9 @@ class RadioService : Service() {
 
     override fun onCreate() {
         super.onCreate()
+        Log.w("RadioService", "service created")
         initRemoteView()
         createNotification()
-        Log.w("RadioService", "service created")
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
@@ -93,7 +93,7 @@ class RadioService : Service() {
     }
 
     private fun createNotification() {
-        val notification = NotificationCompat.Builder(this, "100")
+        val notification = NotificationCompat.Builder(this, Constant.NOTIFICATION_CHANNEL_ID)
             .setSmallIcon(R.drawable.radio_ic)
             .setStyle(NotificationCompat.DecoratedCustomViewStyle())
             .setCustomContentView(notificationRemoteView)
