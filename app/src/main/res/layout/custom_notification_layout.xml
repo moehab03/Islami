@@ -31,7 +31,7 @@
             android:src="@drawable/radio_main" />
 
         <ImageView
-            android:id="@+id/preveousBtn"
+            android:id="@+id/notificationPreveousBtn"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_marginStart="10dp"
@@ -39,7 +39,7 @@
             android:background="@drawable/ic_previous" />
 
         <ImageView
-            android:id="@+id/playBtn"
+            android:id="@+id/notificationPlayBtn"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
@@ -47,7 +47,7 @@
             android:background="@drawable/ic_play" />
 
         <ImageView
-            android:id="@+id/nextBtn"
+            android:id="@+id/notificationNextBtn"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"

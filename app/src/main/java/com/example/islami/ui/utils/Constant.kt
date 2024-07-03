@@ -130,4 +130,8 @@ object Constant {
     )
 
     const val SURA_NAME = "suraName"
+    const val NOTIFICATION_CHANNEL_ID = "100"
+    const val RADIOS_STATION = "radiosStation"
+    const val CURRENT_INDEX = "index"
+    const val RADIO_NOTIFICATION_CHANNEL = "radioNotification"
 }
