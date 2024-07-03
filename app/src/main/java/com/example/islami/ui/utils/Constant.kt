@@ -134,4 +134,5 @@ object Constant {
     const val RADIOS_STATION = "radiosStation"
     const val CURRENT_INDEX = "index"
     const val RADIO_NOTIFICATION_CHANNEL = "radioNotification"
+    const val OPEN_RADIO = "open radio"
 }

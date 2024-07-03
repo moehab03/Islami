@@ -58,6 +58,7 @@ class RadioFragment : BaseFragment<FragmentRadioBinding>() {
     private fun createService() {
         val intent = Intent(requireContext(), RadioService::class.java)
         intent.putParcelableArrayListExtra(Constant.RADIOS_STATION, ArrayList(radioStations))
+        intent.putExtra(Constant.CURRENT_INDEX, 0)
         requireActivity().startService(intent)
     }
 
