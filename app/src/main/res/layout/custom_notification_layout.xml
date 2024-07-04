@@ -13,12 +13,13 @@
         android:layout_height="wrap_content"
         android:text="@string/islami_radio"
         android:textColor="@color/orange"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="14dp"
         android:textSize="14sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_vertical"
         android:layout_marginTop="4dp"
         android:orientation="horizontal"
         android:weightSum="4">
@@ -38,20 +39,20 @@
             android:layout_weight="0.7"
             android:background="@drawable/ic_previous" />
 
-        <Button
+        <ImageView
             android:id="@+id/notificationPlayBtn"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_weight="0.7"
-            android:layout_marginStart="10dp"
-            android:background="@drawable/ic_play" />
+            android:layout_marginStart="20dp"
+            android:src="@drawable/ic_pause" />
 
         <Button
             android:id="@+id/notificationNextBtn"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="0.7"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="20dp"
             android:background="@drawable/ic_next" />
 
 

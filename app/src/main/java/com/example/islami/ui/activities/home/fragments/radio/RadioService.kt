@@ -41,11 +41,46 @@ class RadioService : Service() {
 
         if (radioStations == null) getList(intent!!)
 
+        checkActions(intent)
+
+        return START_STICKY
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("RadioService", "service destroied")
+        mediaPlayer.reset()
+    }
+
+    private fun getList(intent: Intent) {
+        radioStations = if (Build.VERSION.SDK_INT > Build.VERSION_CODES.TIRAMISU)
+            intent.getParcelableArrayListExtra(
+                Constant.RADIOS_STATION, RadioStation::class.java
+            )
+        else
+            intent.getParcelableArrayListExtra(Constant.RADIOS_STATION)
+
+        //Log.w("getList","List = $radioStations")
+    }
+
+    private fun checkActions(intent: Intent?) {
         when (intent?.action) {
             PLAY -> {
                 Log.w("RadioService", "Play button pressed")
-                if (mediaPlayer.isPlaying) mediaPlayer.pause()
-                else mediaPlayer.start()
+                if (mediaPlayer.isPlaying) {
+                    mediaPlayer.pause()
+                    notificationRemoteView.setImageViewResource(
+                        R.id.notificationPlayBtn,
+                        R.drawable.ic_play
+                    )
+                } else {
+                    mediaPlayer.start()
+                    notificationRemoteView.setImageViewResource(
+                        R.id.notificationPlayBtn,
+                        R.drawable.ic_pause
+                    )
+                }
+                updateNotification()
             }
 
             NEXT -> {
@@ -69,44 +104,21 @@ class RadioService : Service() {
             else -> {
                 currentChannel = intent!!.getIntExtra(Constant.CURRENT_INDEX, -1)
                 if (currentChannel != -1) changeRadioState()
+                else mediaPlayer.pause()
             }
         }
-
-        return START_STICKY
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.e("RadioService", "service destroied")
-        mediaPlayer.reset()
-    }
-
-    private fun getList(intent: Intent) {
-        radioStations = if (Build.VERSION.SDK_INT > Build.VERSION_CODES.TIRAMISU)
-            intent.getParcelableArrayListExtra(
-                Constant.RADIOS_STATION, RadioStation::class.java
-            )
-        else
-            intent.getParcelableArrayListExtra(Constant.RADIOS_STATION)
-
-        //Log.w("getList","List = $radioStations")
     }
 
     private fun changeRadioState() {
         //Log.w("changeRadioState", "currentChannel = $currentChannel ")
-
-        if (currentChannel >= 0) {
-            mediaPlayer.apply {
-                reset()
-                setDataSource(radioStations?.get(currentChannel)?.url ?: "")
-                prepareAsync()
-                setOnPreparedListener {
-                    start()
-                }
+        mediaPlayer.apply {
+            reset()
+            setDataSource(radioStations?.get(currentChannel)?.url ?: "")
+            prepareAsync()
+            setOnPreparedListener {
+                start()
             }
-        } else
-            mediaPlayer.pause()
-
+        }
         updateNotification()
     }
 
@@ -119,9 +131,9 @@ class RadioService : Service() {
             val channel = NotificationChannel(
                 Constant.NOTIFICATION_CHANNEL_ID,
                 Constant.RADIO_NOTIFICATION_CHANNEL,
-                NotificationManager.IMPORTANCE_LOW
+                NotificationManager.IMPORTANCE_NONE
             )
-            channel.setSound(null,null)
+            channel.setSound(null, null)
             // Register the channel with the system.
             (this.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager)
                 .createNotificationChannel(channel)
@@ -167,7 +179,12 @@ class RadioService : Service() {
             action = PLAY
         }
         val actionPendingIntent =
-            PendingIntent.getService(this, REQUEST_CODE+3, actionIntent, PendingIntent.FLAG_IMMUTABLE)
+            PendingIntent.getService(
+                this,
+                REQUEST_CODE + 3,
+                actionIntent,
+                PendingIntent.FLAG_IMMUTABLE
+            )
         notificationRemoteView.setOnClickPendingIntent(
             R.id.notificationPlayBtn,
             actionPendingIntent
@@ -179,7 +196,12 @@ class RadioService : Service() {
             action = NEXT
         }
         val actionPendingIntent =
-            PendingIntent.getService(this, REQUEST_CODE+2, actionIntent, PendingIntent.FLAG_IMMUTABLE)
+            PendingIntent.getService(
+                this,
+                REQUEST_CODE + 2,
+                actionIntent,
+                PendingIntent.FLAG_IMMUTABLE
+            )
         notificationRemoteView.setOnClickPendingIntent(
             R.id.notificationNextBtn,
             actionPendingIntent
@@ -191,7 +213,12 @@ class RadioService : Service() {
             action = PREV
         }
         val actionPendingIntent =
-            PendingIntent.getService(this, REQUEST_CODE+1, actionIntent, PendingIntent.FLAG_IMMUTABLE)
+            PendingIntent.getService(
+                this,
+                REQUEST_CODE + 1,
+                actionIntent,
+                PendingIntent.FLAG_IMMUTABLE
+            )
         notificationRemoteView.setOnClickPendingIntent(
             R.id.notificationPreveousBtn,
             actionPendingIntent
